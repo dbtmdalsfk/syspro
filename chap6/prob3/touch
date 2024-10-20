@@ -1,0 +1,4 @@
+$ ls -asl a.c b.c
+4 -rw-rw-r--. 1 chang chang 0 3wol 18 12:13 a.c
+4 -rw-rw-r--. 1 chang chang 5 3wol 18 13:30 b.c
+

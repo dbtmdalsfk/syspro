@@ -1,0 +1,4 @@
+$ slink /usr/bin/gcc cc
+$ ls -l cc
+2 lrwxrwxrwx 1 chang chang 7 4wol 8 19:58 cc -> /usr/bin/gcc 
+

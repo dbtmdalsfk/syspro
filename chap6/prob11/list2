@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# 기본 옵션 설정
+long_format=false
+include_hidden=false
+while getopts "lah" opt; do
+  case ${opt} in
+    l )
+      long_format=true
+      ;;
+    a )
+      include_hidden=true
+      ;;
+    h )
+      human_readable=true
+      ;;
+    \? )
+      echo "Usage: cmd [-l] [-a] [-h]"
+      exit 1
+      ;;
+  esac
+done
+
+
+if [ "$include_hidden" = true ]; then
+  files=(*)
+else
+  files=(*)
+  files=(${files[@]#.})  
+fi
+
+for f in "${files[@]}"; do
+  if [ "$long_format" = true ]; then
+    if [ -e "$f" ]; then
+      if [ "$human_readable" = true ]; then
+        size=$(du -h "$f" | cut -f1)
+      else
+        size=$(stat -c%s "$f")
+      fi
+      echo "$size $f"
+    fi
+  else
+    echo "$f"
+  fi
+done
+

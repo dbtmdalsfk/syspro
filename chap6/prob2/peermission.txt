@@ -1,0 +1,4 @@
+$ fchmod 664 you.txt
+$ ls -asl you.txt
+4 -rw-rw-r-- 1 chang chang 518 4월 8 19:06 you.txt
+
