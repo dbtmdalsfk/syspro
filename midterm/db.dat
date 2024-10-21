@@ -1,0 +1,11 @@
+#define MAX24
+#define START_ID 1
+
+struct book{
+	int number
+	char bkname[MAX24];
+	char huname[MAX24];
+	int year;
+	int lonum;
+	int loava;
+};
